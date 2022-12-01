@@ -1,7 +1,11 @@
+import 'package:app_peliculas/generated/l10n.dart';
 import 'package:app_peliculas/provider/movie_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'views/views.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_localizations/flutter_localizations.dart';
+
 void main() {
   runApp(const AppState());
 }
@@ -29,6 +33,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate
+      ],
+      supportedLocales: AppLocalizations.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
       title: 'Peliculas App',
       initialRoute: 'Home',

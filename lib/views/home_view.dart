@@ -1,3 +1,4 @@
+import 'package:app_peliculas/generated/l10n.dart';
 import 'package:app_peliculas/provider/movie_provider.dart';
 import 'package:app_peliculas/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class HomeView extends StatelessWidget {
     // /print(providermovie.onDisplaymovie);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Peliculas en cine"),
+        title:  Text(AppLocalizations.of(context).title),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
